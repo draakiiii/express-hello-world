@@ -89,22 +89,17 @@ input[type="text"]:focus {
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
     display: block;
-    position: fixed; /* Añadido para posicionar el spinner */
-    top: 50%; /* Centrar verticalmente */
-    left: 50%; /* Centrar horizontalmente */
-    transform: translate(-50%, -50%); /* Ajustar centrado */
 }
 
-.query-type-spinner:hover {
-    background-color: #e6e6e6;
-    border-color: #999;
-}
+    .query-type-spinner:hover {
+        background-color: #e6e6e6;
+        border-color: #999;
+    }
 
-.query-type-spinner:focus {
-    outline: none;
-    border-color: #777;
-}
-
+    .query-type-spinner:focus {
+        outline: none;
+        border-color: #777;
+    }
 
 
 
