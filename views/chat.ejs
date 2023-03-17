@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="chats.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="page-title"></h1> <!-- Título agregado aquí -->
+
+        <div class="messages" id="messages">
+            <!-- Los mensajes de chat se agregarán aquí -->
+        </div>
+        <form id="message-form">
+            <input type="text" id="user-input" placeholder="Escribe tu mensaje aquí...">
+            <button class="send-button" type="submit">Enviar</button>
+        </form>
+        <form id="query-type-form">
+            <select id="query-type" class="query-type-spinner" onchange="updateTitle()">
+                <option value="chat" selected>Chat convencional</option>
+                <option value="prompts">Generador de prompts para imágenes</option>
+                <option value="teach">Chat para aprender</option>
+                <option value="idea_generator">Generador de ideas</option>
+                <option value="writing_style_reviewer">Revisor de estilo de escritura</option>
+            </select>
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById('message-form');
+        const input = document.getElementById('user-input');
+        const messages = document.getElementById('messages');
+        const pageTitle = document.getElementById('page-title'); // Referencia al título agregada aquí
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            sendMessage();
+        });
+
+        function updateTitle() { // Función para actualizar el título
+            const queryType = document.getElementById('query-type');
+            pageTitle.textContent = queryType.options[queryType.selectedIndex].text;
+        }
+
+        updateTitle(); // Llamada a la función para establecer el título inicial
+
+        async function sendMessage() {
+            const messageText = input.value.trim();
+
+            if (messageText.length === 0) return;
+
+            // Crear y mostrar mensaje del usuario
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('message', 'user-message');
+            userMessage.textContent = messageText;
+            messages.appendChild(userMessage);
+
+            input.value = '';
+            scrollToBottom();
+
+            // Obtener el tipo de consulta seleccionada
+            const queryType =document.getElementById('query-type').value;            // Enviar el mensaje a la API de OpenAI
+            const response = await fetch(`/api/${queryType}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: messageText })
+            });
+            const { reply } = await response.json();
+
+            // Crear y mostrar mensaje del asistente
+            const assistantMessage = document.createElement('div');
+            assistantMessage.classList.add('message', 'assistant-message');
+            assistantMessage.textContent = reply;
+            messages.appendChild(assistantMessage);
+
+            scrollToBottom();
+        }
+
+        function scrollToBottom() {
+            messages.scrollTop = messages.scrollHeight;
+        }
+    </script>
+</body>
+</html>

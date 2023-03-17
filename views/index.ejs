@@ -4,66 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú</title>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #121212; /* Modo oscuro: fondo oscuro */
-    color: #ffffff; /* Modo oscuro: texto claro */
-}
-
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: #1e1e1e; /* Modo oscuro: contenedor oscuro */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    padding: 20px;
-}
-        
-.grid-item {
-    background-color: #007AFF;
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.grid-item:hover {
-    background-color: #005fdb;
-}
-
-.color-selector {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.dark-mode-toggle {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    cursor: pointer;
-}
-
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <input type="color" class="color-selector" id="color-selector">
     <div class="container">
         <div class="grid">
             <div class="grid-item" id="chat">Chat</div>
-            <div class="grid-item" id="generador-prompts">Generador Prompts</div>
-            <div class="grid-item" id="aprendizaje">Aprendizaje</div> <!-- Nuevo botón de aprendizaje -->
+            <div class="grid-item" id="generador-prompts">WORK IN PROGRESS</div>
+            <div class="grid-item" id="aprendizaje">WORK IN PROGRESS</div>
             <!-- Agregar más funciones aquí -->
         </div>
     </div>
@@ -73,11 +22,11 @@
         });
 
         document.getElementById('generador-prompts').addEventListener('click', () => {
-            window.location.href = 'prompts'; // Reemplazar con la ruta al archivo HTML del generador de prompts
+            <!-- window.location.href = 'prompts'; // Reemplazar con la ruta al archivo HTML del generador de prompts -->
         });
 
         document.getElementById('aprendizaje').addEventListener('click', () => {
-            window.location.href = 'teach'; // Reemplazar con la ruta al archivo HTML del generador de prompts
+           <!-- window.location.href = 'teach'; // Reemplazar con la ruta al archivo HTML del generador de prompts -->
         });
 
         // Agregar más eventos de clic para las funciones adicionales aquí
