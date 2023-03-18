@@ -72,7 +72,7 @@
             scrollToBottom();
 
             // Enviar el mensaje a la API de OpenAI
-            const response = await fetch(`/gpt3/${queryType}`, {
+            const response = await fetch(`/gpt4/${queryType}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: messageText })

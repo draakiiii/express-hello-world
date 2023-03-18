@@ -10,8 +10,8 @@
     <input type="color" class="color-selector" id="color-selector">
     <div class="container">
         <div class="grid">
-            <div class="grid-item" id="chat">Chat</div>
-            <div class="grid-item" id="generador-prompts">WORK IN PROGRESS</div>
+            <div class="grid-item" id="chat">GPT 3.5</div>
+            <div class="grid-item" id="gpt4">GPT 4</div>
             <div class="grid-item" id="aprendizaje">WORK IN PROGRESS</div>
             <!-- Agregar más funciones aquí -->
         </div>
@@ -21,8 +21,8 @@
             window.location.href = 'chat'; // Reemplazar con la ruta al archivo HTML del chat
         });
 
-        document.getElementById('generador-prompts').addEventListener('click', () => {
-            <!-- window.location.href = 'prompts'; // Reemplazar con la ruta al archivo HTML del generador de prompts -->
+        document.getElementById('gpt4').addEventListener('click', () => {
+            window.location.href = 'gpt4'; // Reemplazar con la ruta al archivo HTML del generador de prompts
         });
 
         document.getElementById('aprendizaje').addEventListener('click', () => {
