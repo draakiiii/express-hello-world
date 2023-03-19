@@ -27,6 +27,8 @@
                 <option value="writing_style_reviewer">Revisor de estilo de escritura</option>
                 <option value="haiku_generator">Generador de Haikus</option>
                 <option value="interactive_storytelling">Narración interactiva para juegos de rol</option>
+<option value="novel_index_generator">Generación de novelas</option>
+<option value="story_prompt">Generación de imágenes para novelas</option>
             </select>
         </form>
     </div>
@@ -43,7 +45,7 @@
 
         function updateTitle() { // Función para actualizar el título
             const queryType = document.getElementById('query-type');
-            pageTitle.textContent = queryType.options[queryType.selectedIndex].text;
+            pageTitle.textContent = queryType.options[queryType.selectedIndex].text  + " - GPT 4";
         }
 
         updateTitle(); // Llamada a la función para establecer el título inicial
