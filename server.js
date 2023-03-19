@@ -68,6 +68,7 @@ async function callOpenAI(message, system_content, similarTextsAndChats, model) 
         {
             model: model,
             messages: messages,
+stream: "true",
         },
         {
             headers: {
