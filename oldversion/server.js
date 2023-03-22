@@ -45,8 +45,8 @@ app.get('/chat', (req, res) => {
     res.render('chat');
 });
 
-app.get('/teach', (req, res) => {
-    res.render('teach');
+app.get('/book', (req, res) => {
+    res.render('book');
 });
 
 async function callOpenAI(message, system_content, similarTextsAndChats, model) {

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creador de libros</title>
+    <link rel="stylesheet" href="chats.css">
+</head>
+<body>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+  <div>
+    <label for="portada">Portada:</label>
+    <input type="file" id="portada" name="portada">
+  </div>
+  <div>
+    <label for="texto">Texto:</label>
+    <input type="file" id="texto" name="texto">
+  </div>
+  <div>
+    <label for="imagen">Imagen:</label>
+    <input type="file" id="imagen" name="imagen">
+  </div>
+  <button type="submit">Crear libro PDF</button>
+</form>
+
+</body>
+</html>
